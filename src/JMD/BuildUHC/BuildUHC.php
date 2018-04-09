@@ -40,7 +40,7 @@ class BuildUHC extends PluginBase implements Listener {
 	public $currentLevel = "";
 	
 	public function onEnable()
-	{
+	
 		  $this->getLogger()->info(TE::DARK_AQUA . "BuildUHC by JMD");
                   
                 $this->getServer()->getPluginManager()->registerEvents($this ,$this);
@@ -94,8 +94,8 @@ class BuildUHC extends PluginBase implements Listener {
 		$lang->save();
                 $slots = new Config($this->getDataFolder() . "/slots.yml", Config::YAML);
                 $slots->save();
-		$this->getServer()->getScheduler()->scheduleRepeatingTask(new GameSender($this), 20);
-		$this->getServer()->getScheduler()->scheduleRepeatingTask(new RefreshSigns($this), 10);
+		$this->getServer()->getScheduler()->scheduleRepeatingTask(new GameSender($this),20);
+		$this->getServer()->getScheduler()->scheduleRepeatingTask(new RefreshSigns($this), 15);
 	}
 	
 	public function onDeath(PlayerDeathEvent $event){
